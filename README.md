@@ -7,6 +7,20 @@
 Верстка основной страничке
 Верстка учетной записи
 
+## Используемые технологии:
+* Git
+* JavaScript
+* Fetch API
+* React.js
+  * useState
+  * useEffect
+  * useHistory
+  * localStorage
+  * Switch
+  * Route
+  * Register
+  * ProtectedRoute
+
 
 ## Инструкции по запуску:
 
