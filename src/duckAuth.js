@@ -28,7 +28,7 @@ export const authorize = (identifier, password) => {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({identifier, password})
+    body: JSON.stringify({identifier, password})    
   })
   .then(checkResponse)
 };

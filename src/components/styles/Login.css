@@ -33,6 +33,7 @@
   color: #02FF00;
   text-align: center;
   margin-top: 32px;
+  cursor: pointer;
 }
 .login__signup {
   display: flex;

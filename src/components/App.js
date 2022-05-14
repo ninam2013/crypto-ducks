@@ -24,7 +24,6 @@ const App = () => {
             history.push("/ducks");
             return;
         }
-
         history.push('/register');
     }, [loggedIn]);
 
@@ -35,9 +34,11 @@ const App = () => {
                 if (!data.jwt) {
                     return;
                 }
-
                 localStorage.setItem('jwt', data.jwt);
-
+                setUserData({
+                    username: data.user.username,
+                    email: data.user.email
+                });
                 setLoggedIn(true)
             });
     }
@@ -51,10 +52,10 @@ const App = () => {
     }
 
     const tokenCheck = () => {
-        if (localStorage.getItem('jwt')){
+        if (localStorage.getItem('jwt')) {
             let jwt = localStorage.getItem('jwt');
             duckAuth.getContent(jwt).then((res) => {
-                if (res){                   
+                if (res) {
                     setUserData({
                         username: res.username,
                         email: res.email
@@ -77,7 +78,7 @@ const App = () => {
                 <DuckList />
             </ProtectedRoute>
             <ProtectedRoute path="/my-profile" loggedIn={loggedIn}>
-                <MyProfile userData={userData} />
+                <MyProfile userData={userData} handleSignOut={handleSignOut} />
             </ProtectedRoute>
             <Route path="/login">
                 <div className="loginContainer">

@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import Logo from './Logo.js';
 import './styles/NavBar.css';
 
-function NavBar ({ handleSignOut }) {
+function NavBar({ handleSignOut }) {
   return (
     <div className="navbar">
       <div className="navbar__logo">
-        <Logo/>
+        <Logo />
       </div>
       <ul className="navbar__nav">
         <li><Link to="ducks" className="navbar__link">Утки</Link></li>

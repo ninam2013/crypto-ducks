@@ -11,7 +11,7 @@ const Login = (props) => {
     const [message, setMessage] = useState('');
 
     const handleChange = (e) => {
-        const {name, value} = e.target;
+        const { name, value } = e.target;
         setInputs((prev) => ({
             ...prev,
             [name]: value,
@@ -23,14 +23,13 @@ const Login = (props) => {
         if (!inputs.username || !inputs.password) {
             return;
         }
-
         props.handleLogin(inputs.username, inputs.password)
             .catch(setMessage)
     }
 
-    return(
+    return (
         <div onSubmit={handleSubmit} className="login">
-            <Logo title={'CryptoDucks'}/>
+            <Logo title={'CryptoDucks'} />
             <p className="login__welcome">
                 Это приложение содержит конфиденциальную информацию.
                 Пожалуйста, войдите или зарегистрируйтесь, чтобы получить доступ к CryptoDucks.

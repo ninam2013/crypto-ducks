@@ -2,11 +2,12 @@ import React from 'react';
 import NavBar from './NavBar.js';
 import './styles/MyProfile.css';
 
-function MyProfile (props) {
+function MyProfile (props) {  
   let { username, email } = props.userData || {};
+  
   return (
     <>
-      <NavBar />
+      <NavBar handleSignOut={props.handleSignOut} />
       <div className="my-profile">
         <div className="my-profile__container">
           <div className="my-profile__header">
